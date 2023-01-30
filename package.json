@@ -1,0 +1,41 @@
+{
+  "name": "fc-ddd-modelagem-taticas-e-patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.25.8",
+    "sequelize-typescript": "^2.1.5",
+    "sqlite3": "^5.1.2",
+    "typescript": "^4.7.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.204",
+    "@swc/jest": "^0.2.21",
+    "@types/jest": "^28.1.3",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.3",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^28.1.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1"
+  },
+  "scripts": {
+    "clear-build": "rimraf ./dist",
+    "build:watch": "npm run clear-build && tsc --watch",
+    "test": "npm run tsc-check && jest",
+    "test:watch": "npm run tsc-check && jest --watchAll",
+    "tsc-check": "node_modules/.bin/tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
