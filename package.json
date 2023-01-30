@@ -8,6 +8,7 @@
     "sequelize": "^6.25.8",
     "sequelize-typescript": "^2.1.5",
     "sqlite3": "^5.1.2",
+    "tsconfig-paths": "^4.1.2",
     "typescript": "^4.7.4",
     "uuid": "^9.0.0"
   },
@@ -25,6 +26,7 @@
     "eslint-plugin-n": "^15.2.3",
     "eslint-plugin-promise": "^6.0.0",
     "jest": "^28.1.1",
+    "nodemon": "^2.0.20",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1"
   },
@@ -33,7 +35,8 @@
     "build:watch": "npm run clear-build && tsc --watch",
     "test": "npm run tsc-check && jest",
     "test:watch": "npm run tsc-check && jest --watchAll",
-    "tsc-check": "node_modules/.bin/tsc --noEmit"
+    "tsc-check": "node_modules/.bin/tsc --noEmit",
+    "dev": "nodemon"
   },
   "keywords": [],
   "author": "",
