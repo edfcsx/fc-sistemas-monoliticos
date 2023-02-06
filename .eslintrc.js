@@ -19,6 +19,7 @@ module.exports = {
     indent: 'off',
     'no-tabs': 'off',
     'no-new': 'off',
-    'dot-notation': 'off'
+    'dot-notation': 'off',
+    'no-useless-constructor': 'off'
   }
 }
