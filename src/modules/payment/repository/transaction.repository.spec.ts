@@ -1,11 +1,11 @@
 import { Sequelize } from 'sequelize-typescript'
 import SequelizeSetupTests from '../../@shared/tests/sequelize.setup'
 import TransactionModel from './transaction.model'
-import Transaction from '../domain/transaction'
+import TransactionEntity from '../domain/transaction.entity'
 import Id from '../../@shared/domain/value-object/id.value-object'
 import TransactionRepository from './transaction.repository'
 
-describe('Transaction Repository tests', () => {
+describe('TransactionEntity Repository tests', () => {
   let sequelize: Sequelize
 
   beforeEach(async () => {
@@ -17,7 +17,7 @@ describe('Transaction Repository tests', () => {
   })
 
   it('should save a transaction', async () => {
-    const transaction = new Transaction({
+    const transaction = new TransactionEntity({
       id: new Id('1'),
       amount: 100,
       orderId: '1'

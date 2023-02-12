@@ -1,7 +1,7 @@
 import UseCaseInterface from '../../../@shared/usecase/use-case.interface'
 import { ProcessPaymentInputDTO, ProcessPaymentOutputDTO } from './process-payment.dto'
 import PaymentGateway from '../../gateway/payment.gateway'
-import Transaction from '../../domain/transaction'
+import TransactionEntity from '../../domain/transaction.entity'
 
 export default class ProcessPaymentUseCase implements UseCaseInterface {
   private readonly transactionRepository: PaymentGateway
@@ -11,7 +11,7 @@ export default class ProcessPaymentUseCase implements UseCaseInterface {
   }
 
   async handle (input: ProcessPaymentInputDTO): Promise<ProcessPaymentOutputDTO> {
-    const transaction = new Transaction({
+    const transaction = new TransactionEntity({
       amount: input.amount,
       orderId: input.orderId
     })

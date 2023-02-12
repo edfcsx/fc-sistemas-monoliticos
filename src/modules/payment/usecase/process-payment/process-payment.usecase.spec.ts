@@ -1,4 +1,4 @@
-import Transaction, { TransactionStatus } from '../../domain/transaction'
+import TransactionEntity, { TransactionStatus } from '../../domain/transaction.entity'
 import Id from '../../../@shared/domain/value-object/id.value-object'
 import ProcessPaymentUseCase from './process-payment.usecase'
 
@@ -13,14 +13,14 @@ describe('Process Payment usecase unit tests', () => {
     const repository = mockRepository()
     const usecase = new ProcessPaymentUseCase(repository)
 
-    const transaction = new Transaction({
+    const transaction = new TransactionEntity({
       id: new Id('1'),
       amount: 100,
       orderId: '1'
     })
 
     jest.spyOn(usecase['transactionRepository'], 'save').mockImplementation(() =>
-      Promise.resolve(new Transaction({
+      Promise.resolve(new TransactionEntity({
         id: new Id('1'),
         amount: 100,
         orderId: '1',
@@ -47,14 +47,14 @@ describe('Process Payment usecase unit tests', () => {
     const repository = mockRepository()
     const usecase = new ProcessPaymentUseCase(repository)
 
-    const transaction = new Transaction({
+    const transaction = new TransactionEntity({
       id: new Id('1'),
       amount: 50,
       orderId: '1'
     })
 
     jest.spyOn(usecase['transactionRepository'], 'save').mockImplementation(() =>
-      Promise.resolve(new Transaction({
+      Promise.resolve(new TransactionEntity({
         id: new Id('1'),
         amount: 50,
         orderId: '1',

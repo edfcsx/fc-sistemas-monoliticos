@@ -1,5 +1,5 @@
-import Transaction from '../domain/transaction'
+import TransactionEntity from '../domain/transaction.entity'
 
 export default interface PaymentGateway {
-  save(input: Transaction): Promise<Transaction>
+  save(input: TransactionEntity): Promise<TransactionEntity>
 }

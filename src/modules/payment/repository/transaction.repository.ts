@@ -1,9 +1,9 @@
 import PaymentGateway from '../gateway/payment.gateway'
 import TransactionModel from './transaction.model'
-import Transaction from '../domain/transaction'
+import TransactionEntity from '../domain/transaction.entity'
 
 export default class TransactionRepository implements PaymentGateway {
-  async save (input: Transaction): Promise<Transaction> {
+  async save (input: TransactionEntity): Promise<TransactionEntity> {
     await TransactionModel.create({
       id: input.id.id,
       orderId: input.orderId,
@@ -13,7 +13,7 @@ export default class TransactionRepository implements PaymentGateway {
       updatedAt: input.updatedAt
     })
 
-    return new Transaction({
+    return new TransactionEntity({
       id: input.id,
       orderId: input.orderId,
       amount: input.amount,

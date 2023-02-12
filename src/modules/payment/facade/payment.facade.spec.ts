@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript'
 import SequelizeSetupTests from '../../@shared/tests/sequelize.setup'
 import TransactionModel from '../repository/transaction.model'
-import { TransactionStatus } from '../domain/transaction'
+import { TransactionStatus } from '../domain/transaction.entity'
 import PaymentFacadeFactory from '../factory/payment-facade.factory'
 
 describe('Payment Facade tests', () => {
